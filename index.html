@@ -1,1 +1,256 @@
-testing
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clayton Strauch | Personal Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 40px auto;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .sidebar {
+      flex: 1 1 250px;
+      background: #eee;
+      padding: 20px;
+      text-align: center;
+    }
+    .sidebar img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 50%;
+    }
+    .content {
+      flex: 2 1 600px;
+      padding: 30px;
+    }
+    h1 {
+      margin-top: 0;
+    }
+    section {
+      margin-bottom: 30px;
+    }
+    .section-title {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      font-weight: bold;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+    .item {
+      margin-bottom: 10px;
+    }
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .sidebar {
+        text-align: center;
+      }
+    }
+
+    .tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    }
+    .tab-button {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    background: #f0f0f0;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    }
+    .tab-button.active {
+    background-color: #007acc;
+    color: white;
+    }
+    .tab-content {
+    display: none;
+    }
+    .tab-content.active {
+    display: block;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="sidebar">
+        <img src="headshot.jpg" alt="Clayton Strauch">
+        <h1>Clayton Strauch</h1>
+        <p>I’m a researcher and developer with a background in computational and applied mathematics, AI/ML, and NLP. </p>
+        <section>
+        </br>
+        <div class="section-title">Contact Info</div>
+        <div class="item">
+            <a href="mailto:cstrauch711@gmail.com">cstrauch711@gmail.com</a></br>
+            <a href="https://github.com/cstrauch711">GitHub</a></br>
+            <a href="https://www.linkedin.com/in/clayton-strauch">LinkedIn</a></br>
+            <a href="https://orcid.org/0000-0002-3990-5662"> ORCID </a></br>
+        </div>
+        </section>
+  </section>
+    </div>
+
+    <div class="content">
+      <section>
+        <div id="experience" class="tab-content active">
+            <hr>
+            <div class="item">
+                <p style="text-align:left;">
+                    <strong>M.S. Applied and Computational Mathematics </strong>
+                    <span style="float:right;">June 2025</span>
+                    </br>
+                    University of Washington
+                </p>
+            </div>
+            <div class="item">
+                <p style="text-align:left;">
+                    <strong>B.S. Data Science & Mathematics</strong>
+                    <span style="float:right;">May 2022</span>
+                    </br>
+                    Saint Louis University
+                </p>
+            </div>
+        </section>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('experience')">Experience</button>
+            <button class="tab-button" onclick="showTab('papers')">Papers & Talks</button>
+        </div>
+        <section>
+            <div class="section-title">Experience</div>
+            <div class="item">
+                <h3 style="text-align:left;">
+                    Pumas-AI
+                    <span style="float:right;">March 2025 – Present</span></h3>
+                <p style="text-align:left;">
+                    <strong>Intern</strong>
+                    <ul>
+                        <li>Developed a retrieval-augmented generation (RAG) pipeline using OpenAI LLMs to generate support ticket responses for a pharmacometric modeling software package.</li>
+                        <ul>
+                            <li>Reduced manual workload and improved response times for support team by auto-drafting replies using contextual data from prior support threads, documentation, and tutorials.</li>
+                        </ul>
+                        <li>Integrated email service APIs for real-time input/output and leveraged Pinecone for semantic search and vector-based document retrieval.</li>
+                        <li>Tuned prompt templates and retrieval strategies through iterative evaluation to ensure clarity, relevance, and accuracy.</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="item">
+                <h3 style="text-align:left;">
+                    Pacific Northwest National Laboratory (PNNL)
+                    <span style="float:right;">May 2021 – November 2024</span></h3>
+                <p style="text-align:left;">
+                    <strong>Research Associate</strong>
+                    <span style="float:right;">November 2022 – November 2024</span>
+                    <ul>
+                        <li>Balanced multiple technical projects while independently delivering timely results and deliverables.</li>
+                        <li>Co-authored project proposals, technical work plans, sponsor presentations, and peer-reviewed research publications.</li>
+                        <li>Engineered on an NLP analytics tool powered by Databricks and PySpark to process large-scale, distributed textual datasets.</li>
+                            <ul>
+                                <li>Designed and executed unsupervised clustering experiments to rank document similarity and improve retrieval accuracy.</li>
+                                <li>Built a custom NLP pipeline leveraging domain-specific Transformer models to compute text relevancy scores.</li>
+                            </ul>
+                        <li>Developed Python scripts to mine, clean, and standardize biomedical literature from multiple scholarly databases.</li>
+                            <ul>
+                                <li>Integrated mining scripts into an end-to-end Python package that also retrieves associated omics data via web scraping.</li>
+                            </ul>
+                        <li>Wrote custom Torch DataLoader classes for Transformer text models. Retrieved activation layers from models.</li>
+                        <li>Enhanced a suite of R packages for mass-spectrometry data management and visualization.</li>
+                        <li>Implemented a scoring algorithm to recommend appropriate machine learning models to users based on their data and goals.</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="item">
+                <p style="text-align:left;">
+                    <strong>Intern</strong>
+                    <span style="float:right;">May 2021 – November 2022</span>
+                    </br>
+                    National Security Internship Program
+                    <ul>
+                        <li>Developed a retrieval-augmented generation (RAG) pipeline using OpenAI LLMs to generate support ticket responses for a pharmacometric modeling software package.</li>
+                        <ul>
+                            <li>Reduced manual workload and improved response times for support team by auto-drafting replies using contextual data from prior support threads, documentation, and tutorials.</li>
+                        </ul>
+                        <li>Integrated email service APIs for real-time input/output and leveraged Pinecone for semantic search and vector-based document retrieval.</li>
+                        <li>Tuned prompt templates and retrieval strategies through iterative evaluation to ensure clarity, relevance, and accuracy.</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="item">
+                <h3 style="text-align:left;">
+                    University of Southern California - SPEC Lab
+                    <span style="float:right;">May 2020 – September 2020</span></h3>
+                <p style="text-align:left;">
+                    <strong>Research Assistant</strong> 
+
+                    </br>
+                    NSF-Funded Research Experience for Undergrads (REU)
+                    <ul>
+                        <li>Used R to obtain, clean, format, wrangle, and visualize raw data for merging with a larger database.</li>
+                        <li>Led group sessions teaching and troubleshooting R for other research assistants.</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <div id="papers" class="tab-content">
+            <section>
+                <div class="section-title">Publications</div>
+                <p>Degnan, D. J., <strong>Strauch, C. W.</strong>, Obiri, M. Y., VonKaenel, E. D., Kim, G. S., Kershaw, J. D., Novelli, D. L., Pazdernik, K. T., \& Bramer, L. M. (2024). <strong>“Protein–Protein Interaction Networks Derived from Classical and Machine Learning-Based Natural Language Processing Tools.”</strong> <em>Journal of Proteome Research</em>, 23 (12), 5395–5404. https://doi.org/10.1021/acs.jproteome.4c00535 </p>
+                <p>Degnan, D. J., Claborne, D. M., White, A. M., Akers, S. M., Winans, N. M., Corilo, Y. E., <strong>Strauch, C. W.</strong>, Bailey, V. L., McCue, L. A., Stratton, K. G., \& Bramer, L. M. (2024). <strong>“FREDA: A Web Application for the Processing, Analysis, and Visualization of Fourier‐Transform Mass Spectrometry Data.”</strong> <em>Rapid Communications in Mass Spectrometry</em>, 39 (7). https://doi.org/10.1002/rcm.9980 </p>
+                <p>Degnan D.J., D.M. Claborne, R.E. Richardson, <strong>C.W. Strauch</strong>, E.C. Glasscock, D. Velickovic, K.E. Burnum-Johnson, B.M. Webb-Robertson, K.G. Stratton, L.M. Bramer. 2025. <strong>"MODE: A Web Application for Interactive Visualization and Exploration of Omics Data."</strong> <em>Journal of Proteome Research</em>. https://doi.org/10.1021/acs.jproteome.4c00650 </p>
+            </section>
+            <section>
+                <div class="section-title">Presentations</div>
+                <p>C.W. Strauch, S. Shreyas-Bhavanasi, R.H. Lanier, L. Schmiedler. “Collection and Analysis of Weather Forecast Error Data”. Poster Presented at Saint Louis University Senior Legacy Symposium. Nominated by the Saint Louis University Department of Mathematics and Statistics. May 3, 2022. St. Louis, MO. Symposium Link. Poster Link.</p>
+            </section>
+            
+
+        </div>
+
+      </section>
+
+    </div>
+  </div>
+
+  <script>
+    function showTab(tabId) {
+        const buttons = document.querySelectorAll('.tab-button');
+        const contents = document.querySelectorAll('.tab-content');
+
+        buttons.forEach(btn => btn.classList.remove('active'));
+        contents.forEach(content => content.classList.remove('active'));
+
+        document.getElementById(tabId).classList.add('active');
+        event.target.classList.add('active');
+    }
+  </script>  
+
+</body>
+</html>
